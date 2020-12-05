@@ -1,8 +1,14 @@
+let result = ''
 function reverseString(string){
-    if (string.length === 1){
-        return string
+    if(string.length === 1){
+        result += string
+    } else {
+        reverseString(string.substring(1, string.length ))
+        result += string.substring(1, 0)
     }
-    return reverseString(string.substr(1)) + string.charAt(0)
 }
 
-console.log(reverseString("hello"))
+
+
+reverseString("hello")
+console.log(result)
